@@ -26,8 +26,6 @@ const GameInput = ({ submitForm }) => {
         id="addgame"
         onSubmit={(e) => {
           e.preventDefault();
-
-          var g = game;
           setGame({});
           submitForm(game, e);
           e.target.reset();
