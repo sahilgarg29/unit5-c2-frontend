@@ -76,6 +76,18 @@ function App() {
   }, [search]);
 
   useEffect(() => {
+    const fetchdata = async () => {
+    try {
+      var res = await axios.get(
+        `https://json-todo-api-server.herokuapp.com/games?_sort=${sort.by}&_order=${sort.type}`
+      );
+      console.log(res);
+      setgames([...res.data]);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+    
     fetchdata();
   }, [sort]);
 
