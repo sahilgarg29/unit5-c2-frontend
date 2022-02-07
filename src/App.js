@@ -11,7 +11,7 @@ function App() {
   });
   const [search, setSearch] = useState("");
 
-  async function fetchdata() {
+  const fetchdata = async () => {
     try {
       var res = await axios.get(
         `https://json-todo-api-server.herokuapp.com/games?_sort=${sort.by}&_order=${sort.type}`
